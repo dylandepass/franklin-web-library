@@ -1,3 +1,17 @@
+## [1.2.1](https://github.com/dylandepass/helix-web-library/compare/v1.2.0...v1.2.1) (2022-04-07)
+
+
+### Bug Fixes
+
+* docs ([#9](https://github.com/dylandepass/helix-web-library/issues/9)) ([69b9469](https://github.com/dylandepass/helix-web-library/commit/69b9469e2832fb7291b2c6a9e156263e51bb86b7))
+
+# [1.2.0](https://github.com/dylandepass/helix-web-library/compare/v1.1.2...v1.2.0) (2022-04-07)
+
+
+### Features
+
+* create core and framework builds ([#8](https://github.com/dylandepass/helix-web-library/issues/8)) ([8fde819](https://github.com/dylandepass/helix-web-library/commit/8fde8191f4d37e1b1434ad63338f6b3a7d815c2e))
+
 ## [1.1.2](https://github.com/dylandepass/helix-web-library/compare/v1.1.1...v1.1.2) (2022-04-07)
 
 
