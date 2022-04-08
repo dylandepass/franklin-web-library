@@ -78,7 +78,7 @@ export class App extends HelixApp {
 /**
  * Decorate Page
  */
-new App(document, {
+new App({
   rumGeneration: 'design-website-1',
   productionDomains: ['adobe.design'],
   lcpBlocks: ['hero', 'carousel'],
