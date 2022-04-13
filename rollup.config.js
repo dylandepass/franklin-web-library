@@ -11,7 +11,6 @@
  */
 
 import { terser } from 'rollup-plugin-terser';
-import pkg from './package.json';
 
 const banner = `/*
  * Copyright ${new Date().getFullYear()} Adobe. All rights reserved.
@@ -32,7 +31,7 @@ const bundles = [
     outputFile: 'helix-web-core',
   },
   {
-    source: 'src/framework.js',
+    source: 'src/index.js',
     outputFile: 'helix-web-framework',
   },
   {
