@@ -46,13 +46,13 @@ export default bundles.map((bundle) => ({
   inlineDynamicImports: true,
   output: [
     {
-      file: `dist/${bundle.outputFile}-${pkg.version}.esm.js`,
+      file: `dist/${bundle.outputFile}.esm.js`,
       format: 'es',
       sourcemap: false,
       exports: 'auto',
     },
     {
-      file: `dist/${bundle.outputFile}-${pkg.version}.esm.min.js`,
+      file: `dist/${bundle.outputFile}.esm.min.js`,
       format: 'es',
       sourcemap: false,
       exports: 'auto',
