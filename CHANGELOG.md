@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/dylandepass/helix-web-library/compare/v1.8.0...v1.9.0) (2022-06-22)
+
+
+### Features
+
+* make favIcon path configurable, support ico and svg ([7234a28](https://github.com/dylandepass/helix-web-library/commit/7234a2891d68ddd5a0a1bebf80d7737200665833))
+
 # [1.8.0](https://github.com/dylandepass/helix-web-library/compare/v1.7.1...v1.8.0) (2022-06-22)
 
 
