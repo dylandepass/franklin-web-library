@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/dylandepass/helix-web-library/compare/v1.7.1...v1.8.0) (2022-06-22)
+
+
+### Features
+
+* simple install/uninstall cli ([#23](https://github.com/dylandepass/helix-web-library/issues/23)) ([ed9b8b5](https://github.com/dylandepass/helix-web-library/commit/ed9b8b52daeba1a5b5c9f9ac4a9e4d5d7eed6e55))
+
 ## [1.7.1](https://github.com/dylandepass/helix-web-library/compare/v1.7.0...v1.7.1) (2022-06-22)
 
 
