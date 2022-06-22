@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/dylandepass/helix-web-library/compare/v1.7.0...v1.7.1) (2022-06-22)
+
+
+### Bug Fixes
+
+* only load blocks with blockname ([#22](https://github.com/dylandepass/helix-web-library/issues/22)) ([867c394](https://github.com/dylandepass/helix-web-library/commit/867c394b7c862e0786276a75c0af4b0a2a75baf6))
+
 # [1.7.0](https://github.com/dylandepass/helix-web-library/compare/v1.6.2...v1.7.0) (2022-06-21)
 
 
