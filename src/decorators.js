@@ -209,7 +209,7 @@ export function normalizeHeadings(elem, allowedHeadings) {
 export function addFavIcon(href) {
   const link = document.createElement('link');
   link.rel = 'icon';
-  link.type = 'image/svg+xml';
+  link.type = href.indexOf('.ico') ? 'image/x-icon' : 'image/svg+xml';
   link.href = href;
   const existingLink = document.querySelector('head link[rel="icon"]');
   if (existingLink) {

@@ -83,6 +83,7 @@ Builder configuration options
 | blocksSelector       | The CSS selector used to query blocks   | ':scope > div > div'                   | 'div.section > div > div'                       |
 | makeLinksRelative       | Should anchor tag links be made relative?   | true                   | true                       |
 | lazyStyles       | Should lazy styles be loaded (`/styles/lazy-styles.css`)   | true                    | false                       |
+| favIcon       | Path to favIcon, supports both `.icon` and `.svg`   | `/styles/icon.ico`                    | `/styles/icon.svg`                       |
 
 #### Lifecycle hooks
 These lifecycle hooks can be used to tie custom logic into the page loading flow.

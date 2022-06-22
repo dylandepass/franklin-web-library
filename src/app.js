@@ -36,6 +36,7 @@ const defaultConfig = {
   makeLinksRelative: true,
   lazyStyles: false,
   autoAppear: true,
+  favIcon: '/styles/icon.svg',
 };
 
 /**
@@ -48,6 +49,7 @@ const defaultConfig = {
  * @property {string[]} lcpBlocks
  * @property {boolean} lazyStyles
  * @property {boolean} autoAppear
+ * @property {string} favIcon
  */
 
 export default class HelixApp {
@@ -249,7 +251,7 @@ export default class HelixApp {
       loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
     }
 
-    addFavIcon(`${window.hlx.codeBasePath}/styles/icon.svg`);
+    addFavIcon(`${window.hlx.codeBasePath}${this.config.favIcon ?? defaultConfig.favIcon}`);
     if (this.loadLazyHook) {
       this.loadLazyHook(doc);
     }
