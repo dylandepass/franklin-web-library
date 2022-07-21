@@ -25,6 +25,12 @@
 <dt><a href="#withDecorateBlock">withDecorateBlock()</a></dt>
 <dd><p>Overrides the decorateSections function.</p>
 </dd>
+<dt><a href="#withDecorateIcons">withDecorateIcons()</a></dt>
+<dd><p>Overrides the decorateIcons function.</p>
+</dd>
+<dt><a href="#withDecorateButtons">withDecorateButtons()</a></dt>
+<dd><p>Overrides the decorateIcons function.</p>
+</dd>
 <dt><a href="#withPostDecorateBlockHook">withPostDecorateBlockHook()</a></dt>
 <dd><p>Hook direct after block decoration and before waitForLCP.</p>
 </dd>
@@ -66,6 +72,12 @@ the user experience.</p>
 <dt><a href="#decorateBlock">decorateBlock(block)</a></dt>
 <dd><p>Decorates a block.</p>
 </dd>
+<dt><a href="#decorateIcons">decorateIcons(block)</a></dt>
+<dd><p>Decorates all Icons.</p>
+</dd>
+<dt><a href="#decorateButtons">decorateButtons(block)</a></dt>
+<dd><p>Decorates paragraphs containing a single link as buttons.</p>
+</dd>
 <dt><a href="#waitForLCP">waitForLCP()</a></dt>
 <dd><p>load LCP block and/or wait for LCP in default content.</p>
 </dd>
@@ -84,14 +96,14 @@ the user experience.</p>
 <dt><a href="#toClassName">toClassName(name)</a> ⇒ <code>string</code></dt>
 <dd><p>Sanitizes a name for use as class name.</p>
 </dd>
+<dt><a href="#toCamelCase">toCamelCase(name)</a> ⇒ <code>string</code></dt>
+<dd><p>Sanitizes a name for use as a js property name.</p>
+</dd>
 <dt><a href="#readBlockConfig">readBlockConfig(block)</a> ⇒ <code>object</code></dt>
 <dd><p>Extracts the config from a block.</p>
 </dd>
 <dt><a href="#decorateSections">decorateSections(main)</a></dt>
 <dd><p>Decorates all sections in a container element.</p>
-</dd>
-<dt><a href="#decoratePictures">decoratePictures(main)</a></dt>
-<dd><p>Decorates the picture elements.</p>
 </dd>
 <dt><a href="#normalizeHeadings">normalizeHeadings(elem, allowedHeadings)</a></dt>
 <dd><p>Normalizes all headings within a container element.</p>
@@ -99,8 +111,14 @@ the user experience.</p>
 <dt><a href="#addFavIcon">addFavIcon(href)</a></dt>
 <dd><p>Adds the favicon.</p>
 </dd>
-<dt><a href="#makeLinksRelative">makeLinksRelative(main)</a></dt>
-<dd><p>Turns absolute links within the domain into relative links.</p>
+<dt><a href="#decorateTemplateAndTheme">decorateTemplateAndTheme()</a></dt>
+<dd><p>Set template (page structure) and theme (page styles).</p>
+</dd>
+<dt><a href="#decorateIcons">decorateIcons(element)</a></dt>
+<dd><p>Replace icons with inline SVG and prefix with codeBasePath.</p>
+</dd>
+<dt><a href="#decorateButtons">decorateButtons(element)</a></dt>
+<dd><p>Decorates paragraphs containing a single link as buttons.</p>
 </dd>
 <dt><a href="#createOptimizedPicture">createOptimizedPicture(src, eager, breakpoints)</a></dt>
 <dd><p>Returns a picture element with webp and fallbacks</p>
@@ -138,8 +156,11 @@ the user experience.</p>
 <dt><a href="#waitForLCP">waitForLCP()</a></dt>
 <dd><p>load LCP block and/or wait for LCP in default content.</p>
 </dd>
+<dt><a href="#fetchPlaceholders">fetchPlaceholders(prefix)</a></dt>
+<dd><p>Gets placeholders object</p>
+</dd>
 <dt><a href="#getMetadata">getMetadata(name)</a> ⇒ <code>string</code></dt>
-<dd><p>Retrieves the content of a metadata tag.</p>
+<dd><p>Retrieves the content of metadata tags.</p>
 </dd>
 <dt><a href="#sampleRUM">sampleRUM(checkpoint, data)</a></dt>
 <dd><p>log RUM if part of the sample.</p>
@@ -199,6 +220,18 @@ Overrides the decorateSections function.
 
 ## withDecorateBlock()
 Overrides the decorateSections function.
+
+**Kind**: global function  
+<a name="withDecorateIcons"></a>
+
+## withDecorateIcons()
+Overrides the decorateIcons function.
+
+**Kind**: global function  
+<a name="withDecorateButtons"></a>
+
+## withDecorateButtons()
+Overrides the decorateIcons function.
 
 **Kind**: global function  
 <a name="withPostDecorateBlockHook"></a>
@@ -326,6 +359,30 @@ Decorates a block.
 | --- | --- | --- |
 | block | <code>Element</code> | The block element |
 
+<a name="decorateIcons"></a>
+
+## decorateIcons(block)
+Decorates all Icons.
+
+**Kind**: global function  
+**License**: Exclude from terser  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| block | <code>Element</code> | The block element |
+
+<a name="decorateButtons"></a>
+
+## decorateButtons(block)
+Decorates paragraphs containing a single link as buttons.
+
+**Kind**: global function  
+**License**: Exclude from terser  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| block | <code>Element</code> | The block element |
+
 <a name="waitForLCP"></a>
 
 ## waitForLCP()
@@ -387,7 +444,19 @@ Sanitizes a name for use as class name.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| name | <code>\*</code> | The unsanitized name |
+| name | <code>string</code> | The unsanitized name |
+
+<a name="toCamelCase"></a>
+
+## toCamelCase(name) ⇒ <code>string</code>
+Sanitizes a name for use as a js property name.
+
+**Kind**: global function  
+**Returns**: <code>string</code> - The camelCased name  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | The unsanitized name |
 
 <a name="readBlockConfig"></a>
 
@@ -406,18 +475,6 @@ Extracts the config from a block.
 
 ## decorateSections(main)
 Decorates all sections in a container element.
-
-**Kind**: global function  
-**License**: Exclude from terser  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| main | <code>Element</code> | The container element |
-
-<a name="decoratePictures"></a>
-
-## decoratePictures(main)
-Decorates the picture elements.
 
 **Kind**: global function  
 **License**: Exclude from terser  
@@ -451,17 +508,33 @@ Adds the favicon.
 | --- | --- | --- |
 | href | <code>string</code> | The favicon URL |
 
-<a name="makeLinksRelative"></a>
+<a name="decorateTemplateAndTheme"></a>
 
-## makeLinksRelative(main)
-Turns absolute links within the domain into relative links.
+## decorateTemplateAndTheme()
+Set template (page structure) and theme (page styles).
 
 **Kind**: global function  
-**License**: Exclude from terser  
+<a name="decorateIcons"></a>
+
+## decorateIcons(element)
+Replace icons with inline SVG and prefix with codeBasePath.
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| element | <code>Element</code> | 
+
+<a name="decorateButtons"></a>
+
+## decorateButtons(element)
+Decorates paragraphs containing a single link as buttons.
+
+**Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| main | <code>Element</code> | The container element |
+| element | <code>Element</code> | container element |
 
 <a name="createOptimizedPicture"></a>
 
@@ -609,13 +682,24 @@ load LCP block and/or wait for LCP in default content.
 
 **Kind**: global function  
 **License**: Exclude from terser  
+<a name="fetchPlaceholders"></a>
+
+## fetchPlaceholders(prefix)
+Gets placeholders object
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| prefix | <code>string</code> | 
+
 <a name="getMetadata"></a>
 
 ## getMetadata(name) ⇒ <code>string</code>
-Retrieves the content of a metadata tag.
+Retrieves the content of metadata tags.
 
 **Kind**: global function  
-**Returns**: <code>string</code> - The metadata value  
+**Returns**: <code>string</code> - The metadata value(s)  
 **License**: Exclude from terser  
 
 | Param | Type | Description |
@@ -643,7 +727,6 @@ log RUM if part of the sample.
 
 | Name | Type |
 | --- | --- |
-| makeLinksRelative | <code>boolean</code> | 
 | rumEnabled | <code>boolean</code> | 
 | rumGeneration | <code>string</code> | 
 | blocksSelector | <code>string</code> | 
@@ -651,4 +734,5 @@ log RUM if part of the sample.
 | lcpBlocks | <code>Array.&lt;string&gt;</code> | 
 | lazyStyles | <code>boolean</code> | 
 | autoAppear | <code>boolean</code> | 
+| favIcon | <code>string</code> | 
 
