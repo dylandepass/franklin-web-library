@@ -77,11 +77,10 @@ Builder configuration options
 |-------------|---------------------------------------------------------|--------------------------------|-------------------|
 | rumEnabled       | Enable RUM collection?   | true                   | false                       |
 | rumGeneration       | RUM generation id   |  'project-1'                  | undefined                       |
-| productionDomains       | A list of productions domains, used when `makeLinksRelative` is true.  | ['acme.com']                   | []                       |
+| productionDomains       | A list of productions domains.  | ['acme.com']                   | []                       |
 | lcpBlocks       | List of blocks classes to treat as LCP   | ['hero']                   | []                       |
 | autoAppear       | Should we set the appear class on the body after LCP load? If false then client must add the appear class (`document.querySelector('body').classList.add('appear');`)   | true                   | true                       |
 | blocksSelector       | The CSS selector used to query blocks   | ':scope > div > div'                   | 'div.section > div > div'                       |
-| makeLinksRelative       | Should anchor tag links be made relative?   | true                   | true                       |
 | lazyStyles       | Should lazy styles be loaded (`/styles/lazy-styles.css`)   | true                    | false                       |
 | favIcon       | Path to favIcon, supports both `.icon` and `.svg`   | `/styles/icon.ico`                    | `/styles/icon.svg`                       |
 

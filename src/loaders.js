@@ -12,7 +12,7 @@
 
 /* eslint-disable no-param-reassign */
 
-import { decorateBlock, makeLinksRelative, toCamelCase } from './decorators.js';
+import { decorateBlock, toCamelCase } from './decorators.js';
 
 /**
  * loads a script by adding a script tag to the head.
@@ -167,12 +167,11 @@ export function buildBlock(blockName, content) {
  * @param {Element} header The header element
  * @preserve Exclude from terser
  */
-export async function loadHeader(header, productionDomains) {
+export async function loadHeader(header) {
   const headerBlock = buildBlock('header', '');
   header.append(headerBlock);
   decorateBlock(headerBlock);
   await loadBlock(headerBlock);
-  makeLinksRelative(headerBlock, productionDomains);
 }
 
 /**
@@ -180,12 +179,11 @@ export async function loadHeader(header, productionDomains) {
  * @param {Element} footer The footer element
  * @preserve Exclude from terser
  */
-export async function loadFooter(footer, productionDomains) {
+export async function loadFooter(footer) {
   const footerBlock = buildBlock('footer', '');
   footer.append(footerBlock);
   decorateBlock(footerBlock);
   await loadBlock(footerBlock);
-  makeLinksRelative(footerBlock, productionDomains);
 }
 
 /**

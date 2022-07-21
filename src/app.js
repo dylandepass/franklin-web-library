@@ -19,7 +19,6 @@ import {
   loadHeader,
   loadFooter,
   loadBlocks,
-  makeLinksRelative,
   loadCSS,
   addFavIcon,
   registerPerformanceLogger,
@@ -27,13 +26,11 @@ import {
   decorateBlock,
   decorateButtons,
   decorateIcons,
-  decoratePictures,
   decorateTemplateAndTheme,
   removeStylingFromImages,
 } from './core.js';
 
 const defaultConfig = {
-  makeLinksRelative: true,
   lazyStyles: false,
   autoAppear: true,
   favIcon: '/styles/icon.svg',
@@ -41,7 +38,6 @@ const defaultConfig = {
 
 /**
  * @typedef {object} AppConfig
- * @property {boolean} makeLinksRelative
  * @property {boolean} rumEnabled
  * @property {string} rumGeneration
  * @property {string} blocksSelector
@@ -186,11 +182,7 @@ export default class HelixApp {
    * @param {Element} main The main element
    */
   decorateMain(main) {
-    decoratePictures(main);
     removeStylingFromImages(main);
-    if (this.config.makeLinksRelative ?? defaultConfig.makeLinksRelative) {
-      makeLinksRelative(main, this.config.productionDomains);
-    }
     this.decorateButtons(main);
     this.decorateIcons(main);
     this.buildAutoBlocks(main);
@@ -274,7 +266,7 @@ export default class HelixApp {
    * @param {Element} header The header element
    */
   async loadHeader(header) {
-    loadHeader(header, this.config.productionDomains);
+    loadHeader(header);
   }
 
   /**
@@ -282,7 +274,7 @@ export default class HelixApp {
    * @param {Element} footer The footer element
    */
   async loadFooter(footer) {
-    loadFooter(footer, this.config.productionDomains);
+    loadFooter(footer);
   }
 
   /**
