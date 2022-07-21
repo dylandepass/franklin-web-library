@@ -10,7 +10,6 @@
  * governing permissions and limitations under the License.
  */
 
-import { createOptimizedPicture } from './images.js';
 import { getMetadata } from './metadata.js';
 
 /* eslint-disable no-param-reassign */
@@ -21,26 +20,16 @@ import { getMetadata } from './metadata.js';
  * @preserve Exclude from terser
  */
 export function decorateBlock(block) {
-  const trimDashes = (str) => str.replace(/(^\s*-)|(-\s*$)/g, '');
-  const classes = Array.from(block.classList.values());
-  const blockName = classes[0];
-  if (!blockName) return;
-  const section = block.closest('.section');
-  if (section) {
-    section.classList.add(`${blockName}-container`.replace(/--/g, '-'));
+  const shortBlockName = block.classList[0];
+  if (shortBlockName) {
+    block.classList.add('block');
+    block.setAttribute('data-block-name', shortBlockName);
+    block.setAttribute('data-block-status', 'initialized');
+    const blockWrapper = block.parentElement;
+    blockWrapper.classList.add(`${shortBlockName}-wrapper`);
+    const section = block.closest('.section');
+    if (section) section.classList.add(`${shortBlockName}-container`);
   }
-  const blockWithVariants = blockName.split('--');
-  const shortBlockName = trimDashes(blockWithVariants.shift());
-  const variants = blockWithVariants.map((v) => trimDashes(v));
-  block.classList.add(shortBlockName);
-  block.classList.add(...variants);
-
-  block.classList.add('block');
-  block.setAttribute('data-block-name', shortBlockName);
-  block.setAttribute('data-block-status', 'initialized');
-
-  const blockWrapper = block.parentElement;
-  blockWrapper.classList.add(`${shortBlockName}-wrapper`);
 }
 
 /**
@@ -156,23 +145,6 @@ export function decorateSections(main) {
 }
 
 /**
- * Decorates the picture elements.
- * @param {Element} main The container element
- * @preserve Exclude from terser
- */
-export function decoratePictures(main) {
-  main.querySelectorAll('img[src*="/media_"').forEach((img, i) => {
-    const newPicture = createOptimizedPicture(img.src, img.alt, !i);
-    const picture = img.closest('picture');
-    if (picture) picture.parentElement.replaceChild(newPicture, picture);
-    if (['EM', 'STRONG'].includes(newPicture.parentElement.tagName)) {
-      const styleEl = newPicture.parentElement;
-      styleEl.parentElement.replaceChild(newPicture, styleEl);
-    }
-  });
-}
-
-/**
  * Normalizes all headings within a container element.
  * @param {Element} elem The container element
  * @param {string[]} allowedHeadings The list of allowed headings (h1 ... h6)
@@ -220,36 +192,13 @@ export function addFavIcon(href) {
 }
 
 /**
- * Turns absolute links within the domain into relative links.
- * @param {Element} main The container element
- * @preserve Exclude from terser
- */
-export function makeLinksRelative(main, productionDomains = []) {
-  main.querySelectorAll('a').forEach((a) => {
-    // eslint-disable-next-line no-use-before-define
-    const hosts = ['hlx.page', 'hlx.live', ...productionDomains];
-    if (a.href) {
-      try {
-        const url = new URL(a.href);
-        const relative = hosts.some((host) => url.hostname.includes(host));
-        if (relative) a.href = `${url.pathname}${url.search}${url.hash}`;
-      } catch (e) {
-        // something went wrong
-        // eslint-disable-next-line no-console
-        console.log(e);
-      }
-    }
-  });
-}
-
-/**
  * Set template (page structure) and theme (page styles).
  */
 export function decorateTemplateAndTheme() {
   const template = getMetadata('template');
-  if (template) document.body.classList.add(template);
+  if (template) document.body.classList.add(toClassName(template));
   const theme = getMetadata('theme');
-  if (theme) document.body.classList.add(theme);
+  if (theme) document.body.classList.add(toClassName(theme));
 }
 
 /**
