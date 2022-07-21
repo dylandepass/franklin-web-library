@@ -57,7 +57,12 @@ export default class HelixApp {
     if (this.config.rumEnabled) {
       this.sampleRUM('top');
       window.addEventListener('load', () => sampleRUM('load'));
-      document.addEventListener('click', () => sampleRUM('click'));
+      window.addEventListener('unhandledrejection', (event) => {
+        sampleRUM('error', { source: event.reason.sourceURL, target: event.reason.line });
+      });
+      window.addEventListener('error', (event) => {
+        sampleRUM('error', { source: event.filename, target: event.lineno });
+      });
     }
 
     if (window.name.includes('performance')) {
@@ -191,6 +196,8 @@ export default class HelixApp {
     if (this.postDecorateBlockHook) {
       this.postDecorateBlockHook(main);
     }
+    sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
+    window.setTimeout(() => sampleRUM.observe(main.querySelectorAll('picture > img')), 1000);
   }
 
   /**
@@ -247,6 +254,7 @@ export default class HelixApp {
     if (this.loadLazyHook) {
       this.loadLazyHook(doc);
     }
+    sampleRUM('lazy');
   }
 
   /**
