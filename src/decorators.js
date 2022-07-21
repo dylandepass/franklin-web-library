@@ -256,31 +256,24 @@ export function decorateTemplateAndTheme() {
  * Replace icons with inline SVG and prefix with codeBasePath.
  * @param {Element} element
  */
-function replaceIcons(element) {
-  element.querySelectorAll('img.icon').forEach((img) => {
-    const span = document.createElement('span');
-    span.className = img.className;
-    img.replaceWith(span);
-  });
-}
-
-/**
- * Replace icons with inline SVG and prefix with codeBasePath.
- * @param {Element} element
- */
 export function decorateIcons(element) {
-  // prepare for forward compatible icon handling
-  replaceIcons(element);
-
-  element.querySelectorAll('span.icon').forEach((span) => {
-    const iconName = span.className.split('icon-')[1];
-    fetch(`${window.hlx.codeBasePath}/icons/${iconName}.svg`).then((resp) => {
-      if (resp.status === 200) {
-        resp.text().then((svg) => {
-          span.innerHTML = svg;
-        });
+  element.querySelectorAll('span.icon').forEach(async (span) => {
+    if (span.classList.length < 2 || !span.classList[1].startsWith('icon-')) {
+      return;
+    }
+    const icon = span.classList[1].substring(5);
+    // eslint-disable-next-line no-use-before-define
+    const resp = await fetch(`${window.hlx.codeBasePath}/icons/${icon}.svg`);
+    if (resp.ok) {
+      const iconHTML = await resp.text();
+      if (iconHTML.match(/<style/i)) {
+        const img = document.createElement('img');
+        img.src = `data:image/svg+xml,${encodeURIComponent(iconHTML)}`;
+        span.appendChild(img);
+      } else {
+        span.innerHTML = iconHTML;
       }
-    });
+    }
   });
 }
 
