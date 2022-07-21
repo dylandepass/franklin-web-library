@@ -1,3 +1,16 @@
+# [1.10.0](https://github.com/dylandepass/helix-web-library/compare/v1.9.0...v1.10.0) (2022-07-21)
+
+
+### Bug Fixes
+
+* remove makeLinksRelative & decoratePictures ([#25](https://github.com/dylandepass/helix-web-library/issues/25)) ([c121078](https://github.com/dylandepass/helix-web-library/commit/c121078a088ac8a3f868ec87a88eb75f987f5edc))
+
+
+### Features
+
+* add advanced rum tracking ([#26](https://github.com/dylandepass/helix-web-library/issues/26)) ([00b171f](https://github.com/dylandepass/helix-web-library/commit/00b171f16757fd8811a3eb8f64a79dbf31e59474))
+* update decorate icons ([#24](https://github.com/dylandepass/helix-web-library/issues/24)) ([39125d8](https://github.com/dylandepass/helix-web-library/commit/39125d87f3b3e0705d8aea0b6f0d3de008071eb5))
+
 # [1.9.0](https://github.com/dylandepass/helix-web-library/compare/v1.8.0...v1.9.0) (2022-06-22)
 
 
