@@ -12,6 +12,7 @@
 
 export function stamp(message) {
   if (window.name.includes('performance')) {
+    // eslint-disable-next-line no-console
     console.log(`${new Date() - performance.timing.navigationStart}:${message}`);
   }
 }
