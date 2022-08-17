@@ -49,6 +49,7 @@ const defaultConfig = {
  * @property {boolean} lazyStyles
  * @property {boolean} autoAppear
  * @property {string} favIcon
+ * @property {string} iconsPath
  * @property {boolean} enableBlockLoader
  * @property {boolean} loadHeader
  * @property {boolean} loadFooter
@@ -323,7 +324,7 @@ export default class HelixApp {
    * @preserve Exclude from terser
    */
   decorateIcons(main) {
-    decorateIcons(main);
+    decorateIcons(main, this.config.iconsPath);
   }
 
   /**

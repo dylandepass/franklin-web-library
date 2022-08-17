@@ -205,14 +205,14 @@ export function decorateTemplateAndTheme() {
  * Replace icons with inline SVG and prefix with codeBasePath.
  * @param {Element} element
  */
-export function decorateIcons(element) {
+export function decorateIcons(element, path = '/icons') {
   element.querySelectorAll('span.icon').forEach(async (span) => {
     if (span.classList.length < 2 || !span.classList[1].startsWith('icon-')) {
       return;
     }
     const icon = span.classList[1].substring(5);
     // eslint-disable-next-line no-use-before-define
-    const resp = await fetch(`${window.hlx.codeBasePath}/icons/${icon}.svg`);
+    const resp = await fetch(`${window.hlx.codeBasePath}${path}/${icon}.svg`);
     if (resp.ok) {
       const iconHTML = await resp.text();
       if (iconHTML.match(/<style/i)) {
