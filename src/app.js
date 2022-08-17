@@ -34,6 +34,9 @@ const defaultConfig = {
   lazyStyles: false,
   autoAppear: true,
   favIcon: '/styles/icon.svg',
+  enableBlockLoader: true,
+  loadHeader: true,
+  loadFooter: true,
 };
 
 /**
@@ -46,6 +49,9 @@ const defaultConfig = {
  * @property {boolean} lazyStyles
  * @property {boolean} autoAppear
  * @property {string} favIcon
+ * @property {boolean} enableBlockLoader
+ * @property {boolean} loadHeader
+ * @property {boolean} loadFooter
  */
 
 export default class HelixApp {
@@ -231,7 +237,10 @@ export default class HelixApp {
    */
   async loadLazy(doc) {
     const main = doc.querySelector('main');
-    await loadBlocks(main);
+    // In some cases we don't want the block loader to run (storybook)
+    if (this.config.enableBlockLoader ?? defaultConfig.enableBlockLoader) {
+      await loadBlocks(main);
+    }
 
     const { hash } = window.location;
     if (hash) {
@@ -243,8 +252,13 @@ export default class HelixApp {
       }
     }
 
-    this.loadHeader(doc.querySelector('header'));
-    this.loadFooter(doc.querySelector('footer'));
+    if (this.config.loadHeader ?? defaultConfig.loadHeader) {
+      this.loadHeader(doc.querySelector('header'));
+    }
+
+    if (this.config.loadFooter ?? defaultConfig.loadFooter) {
+      this.loadFooter(doc.querySelector('footer'));
+    }
 
     if (this.config.lazyStyles ?? defaultConfig.lazyStyles) {
       loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);

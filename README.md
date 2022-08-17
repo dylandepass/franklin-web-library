@@ -83,6 +83,9 @@ Builder configuration options
 | blocksSelector       | The CSS selector used to query blocks   | ':scope > div > div'                   | 'div.section > div > div'                       |
 | lazyStyles       | Should lazy styles be loaded (`/styles/lazy-styles.css`)   | true                    | false                       |
 | favIcon       | Path to favIcon, supports both `.icon` and `.svg`   | `/styles/icon.ico`                    | `/styles/icon.svg`                       |
+| enableBlockLoader       | Should the block loader run? In some cases we don't want it to (i.e storybook)   | false                  | true                      |
+| loadHeader       | Should the header be loaded   | false                   | true                  |
+| loadFooter       | Should the footer be loaded   | false                   | true                       |
 
 #### Lifecycle hooks
 These lifecycle hooks can be used to tie custom logic into the page loading flow.
