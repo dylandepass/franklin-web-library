@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/dylandepass/helix-web-library/compare/v1.11.0...v1.12.0) (2022-08-17)
+
+
+### Features
+
+* allow icon path configuration ([61f272d](https://github.com/dylandepass/helix-web-library/commit/61f272d80ea72995032c6312e71d52913639b0b5))
+
 # [1.11.0](https://github.com/dylandepass/helix-web-library/compare/v1.10.0...v1.11.0) (2022-08-17)
 
 
