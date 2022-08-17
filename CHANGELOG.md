@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/dylandepass/helix-web-library/compare/v1.10.0...v1.11.0) (2022-08-17)
+
+
+### Features
+
+* support optionally running block loader, loadHeader and loadFooter ([15793c5](https://github.com/dylandepass/helix-web-library/commit/15793c5eb118a574cba792b453e3d5377f6b732c))
+
 # [1.10.0](https://github.com/dylandepass/helix-web-library/compare/v1.9.0...v1.10.0) (2022-07-21)
 
 
