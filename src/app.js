@@ -203,8 +203,6 @@ export default class HelixApp {
     if (this.postDecorateBlockHook) {
       this.postDecorateBlockHook(main);
     }
-    sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
-    window.setTimeout(() => sampleRUM.observe(main.querySelectorAll('picture > img')), 1000);
   }
 
   /**
@@ -270,6 +268,8 @@ export default class HelixApp {
       this.loadLazyHook(doc);
     }
     sampleRUM('lazy');
+    sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
+    sampleRUM.observe(main.querySelectorAll('picture > img'));
   }
 
   /**
