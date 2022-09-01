@@ -1,3 +1,11 @@
+## [1.12.1](https://github.com/dylandepass/helix-web-library/compare/v1.12.0...v1.12.1) (2022-09-01)
+
+
+### Bug Fixes
+
+* improved toClassName ([2d1fd26](https://github.com/dylandepass/helix-web-library/commit/2d1fd266abdac0ac58eb3e15f92ba5992680555a))
+* **rum:** do not rely on timeouts, instead start rum observation after lazy checkpoint has passed ([ec05397](https://github.com/dylandepass/helix-web-library/commit/ec0539782e3adbd0ab11648f241581f9cc613013))
+
 # [1.12.0](https://github.com/dylandepass/helix-web-library/compare/v1.11.0...v1.12.0) (2022-08-17)
 
 
