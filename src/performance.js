@@ -35,6 +35,16 @@ export function registerPerformanceLogger() {
     });
     pols.observe({ type: 'layout-shift', buffered: true });
 
+    const polt = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        // Log the entry and all associated details.
+        stamp(JSON.stringify(entry));
+      }
+    });
+
+    // Start listening for `longtask` entries to be dispatched.
+    polt.observe({ type: 'longtask', buffered: true });
+
     const pores = new PerformanceObserver((entryList) => {
       const entries = entryList.getEntries();
       entries.forEach((entry) => {
