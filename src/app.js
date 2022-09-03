@@ -98,6 +98,14 @@ export default class HelixApp {
   }
 
   /**
+   * Hook direct after block decoration and before waitForLCP.
+   */
+  withDecorateMain(hook) {
+    this.decorateMainHook = hook;
+    return this;
+  }
+
+  /**
    * Overrides the loadDelayed function.
    */
   withLoadDelayed(override) {
@@ -162,14 +170,6 @@ export default class HelixApp {
   }
 
   /**
-   * Hook direct after block decoration and before waitForLCP.
-   */
-  withPostDecorateBlockHook(hook) {
-    this.postDecorateBlockHook = hook;
-    return this;
-  }
-
-  /**
    * Decorate the page
    */
   async decorate() {
@@ -200,8 +200,9 @@ export default class HelixApp {
     this.buildAutoBlocks(main);
     this.decorateSections(main);
     this.decorateBlocks(main);
-    if (this.postDecorateBlockHook) {
-      this.postDecorateBlockHook(main);
+
+    if (this.decorateMainHook) {
+      this.decorateMainHook(doc);
     }
   }
 

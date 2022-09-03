@@ -94,7 +94,7 @@ These lifecycle hooks can be used to tie custom logic into the page loading flow
 | Hooks        | Description                                                                                                 | 
 |-------------|-------------------------------------------------------------------------------------------------------------|
 | `withLoadEager` | Called just after main is decorated and LCP is loaded |
-| `withPostDecorateBlockHook` | Called after block decoration and before waitForLCP. |
+| `withDecorateMain` | Called after block decoration and before waitForLCP. |
 | `withLoadLazy` | Called just after all blocks have been loaded (js/css) |
 | `withLoadDelayed` | Called after the page load lifecycle has completed |
 

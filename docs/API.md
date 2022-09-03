@@ -7,6 +7,9 @@
 <dt><a href="#withLoadLazy">withLoadLazy()</a></dt>
 <dd><p>Hook into the end of loadLazy function.</p>
 </dd>
+<dt><a href="#withDecorateMain">withDecorateMain()</a></dt>
+<dd><p>Hook direct after block decoration and before waitForLCP.</p>
+</dd>
 <dt><a href="#withLoadDelayed">withLoadDelayed()</a></dt>
 <dd><p>Overrides the loadDelayed function.</p>
 </dd>
@@ -30,9 +33,6 @@
 </dd>
 <dt><a href="#withDecorateButtons">withDecorateButtons()</a></dt>
 <dd><p>Overrides the decorateIcons function.</p>
-</dd>
-<dt><a href="#withPostDecorateBlockHook">withPostDecorateBlockHook()</a></dt>
-<dd><p>Hook direct after block decoration and before waitForLCP.</p>
 </dd>
 <dt><a href="#decorate">decorate()</a></dt>
 <dd><p>Decorate the page</p>
@@ -162,7 +162,7 @@ the user experience.</p>
 <dt><a href="#getMetadata">getMetadata(name)</a> ⇒ <code>string</code></dt>
 <dd><p>Retrieves the content of metadata tags.</p>
 </dd>
-<dt><a href="#sampleRUM">sampleRUM(checkpoint, data)</a></dt>
+<dt><a href="#sampleRUM">sampleRUM(checkpoint, data, generation)</a></dt>
 <dd><p>log RUM if part of the sample.</p>
 </dd>
 </dl>
@@ -184,6 +184,12 @@ Hook into the end of loadEager function.
 
 ## withLoadLazy()
 Hook into the end of loadLazy function.
+
+**Kind**: global function  
+<a name="withDecorateMain"></a>
+
+## withDecorateMain()
+Hook direct after block decoration and before waitForLCP.
 
 **Kind**: global function  
 <a name="withLoadDelayed"></a>
@@ -232,12 +238,6 @@ Overrides the decorateIcons function.
 
 ## withDecorateButtons()
 Overrides the decorateIcons function.
-
-**Kind**: global function  
-<a name="withPostDecorateBlockHook"></a>
-
-## withPostDecorateBlockHook()
-Hook direct after block decoration and before waitForLCP.
 
 **Kind**: global function  
 <a name="decorate"></a>
@@ -708,7 +708,7 @@ Retrieves the content of metadata tags.
 
 <a name="sampleRUM"></a>
 
-## sampleRUM(checkpoint, data)
+## sampleRUM(checkpoint, data, generation)
 log RUM if part of the sample.
 
 **Kind**: global function  
@@ -718,6 +718,7 @@ log RUM if part of the sample.
 | --- | --- | --- |
 | checkpoint | <code>string</code> | identifies the checkpoint in funnel |
 | data | <code>Object</code> | additional data for RUM sample |
+| generation | <code>string</code> | additional data for RUM sample |
 
 <a name="AppConfig"></a>
 
@@ -735,4 +736,8 @@ log RUM if part of the sample.
 | lazyStyles | <code>boolean</code> | 
 | autoAppear | <code>boolean</code> | 
 | favIcon | <code>string</code> | 
+| iconsPath | <code>string</code> | 
+| enableBlockLoader | <code>boolean</code> | 
+| loadHeader | <code>boolean</code> | 
+| loadFooter | <code>boolean</code> | 
 
