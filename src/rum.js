@@ -19,7 +19,7 @@
  * @param {string} generation additional data for RUM sample
  * @preserve Exclude from terser
  */
-export function sampleRUM(checkpoint, data = {}, generation) {
+export function sampleRUM(checkpoint, data = {}, generation = '') {
   sampleRUM.defer = sampleRUM.defer || [];
   const defer = (fnname) => {
     sampleRUM[fnname] = sampleRUM[fnname]
