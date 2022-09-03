@@ -1,3 +1,10 @@
+## [1.12.4](https://github.com/dylandepass/helix-web-library/compare/v1.12.3...v1.12.4) (2022-09-03)
+
+
+### Bug Fixes
+
+* rename withPostDecorateBlockHook to withDecorateMain ([950c2cd](https://github.com/dylandepass/helix-web-library/commit/950c2cd8fd5a8259317f62e04afc600e1a8a4e21))
+
 ## [1.12.3](https://github.com/dylandepass/helix-web-library/compare/v1.12.2...v1.12.3) (2022-09-03)
 
 
