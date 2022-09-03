@@ -1,3 +1,10 @@
+## [1.12.5](https://github.com/dylandepass/helix-web-library/compare/v1.12.4...v1.12.5) (2022-09-03)
+
+
+### Bug Fixes
+
+* default generation to sampleRUM call ([7ce046a](https://github.com/dylandepass/helix-web-library/commit/7ce046a023afcab6484a8d4b2b2b0916f313e041))
+
 ## [1.12.4](https://github.com/dylandepass/helix-web-library/compare/v1.12.3...v1.12.4) (2022-09-03)
 
 
