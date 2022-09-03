@@ -1,3 +1,10 @@
+## [1.12.3](https://github.com/dylandepass/helix-web-library/compare/v1.12.2...v1.12.3) (2022-09-03)
+
+
+### Bug Fixes
+
+* add longtask to performance logger ([f76bf73](https://github.com/dylandepass/helix-web-library/commit/f76bf739ac61168167b42ebf40a5fd7593bbff68))
+
 ## [1.12.2](https://github.com/dylandepass/helix-web-library/compare/v1.12.1...v1.12.2) (2022-09-03)
 
 
