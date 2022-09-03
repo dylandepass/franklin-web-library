@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/dylandepass/helix-web-library/compare/v1.12.1...v1.12.2) (2022-09-03)
+
+
+### Bug Fixes
+
+* move generation to last param in sampleRUM ([bdd6b6c](https://github.com/dylandepass/helix-web-library/commit/bdd6b6c643e7842d1745d1d85f957b830b8269c5))
+
 ## [1.12.1](https://github.com/dylandepass/helix-web-library/compare/v1.12.0...v1.12.1) (2022-09-01)
 
 
