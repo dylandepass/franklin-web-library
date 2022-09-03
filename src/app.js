@@ -212,7 +212,7 @@ export default class HelixApp {
    * @preserve Exclude from terser
    */
   sampleRUM(event, data = {}) {
-    sampleRUM(event, this.config.rumGeneration, data);
+    sampleRUM(event, data, this.config.rumGeneration);
   }
 
   /**
