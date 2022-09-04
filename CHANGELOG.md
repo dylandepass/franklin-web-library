@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/dylandepass/helix-web-library/compare/v1.12.5...v1.13.0) (2022-09-04)
+
+
+### Features
+
+* add experiments support from express implementation ([14bc4c7](https://github.com/dylandepass/helix-web-library/commit/14bc4c74926fc67c7dc7bf16c8803913251c115b))
+
 ## [1.12.5](https://github.com/dylandepass/helix-web-library/compare/v1.12.4...v1.12.5) (2022-09-03)
 
 
