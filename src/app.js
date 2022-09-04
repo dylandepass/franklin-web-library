@@ -202,7 +202,7 @@ export default class HelixApp {
     this.decorateBlocks(main);
 
     if (this.decorateMainHook) {
-      this.decorateMainHook(doc);
+      this.decorateMainHook(main);
     }
   }
 
@@ -315,8 +315,8 @@ export default class HelixApp {
    * @param {Element} block The block element
    * @preserve Exclude from terser
    */
-  decorateBlock(main) {
-    decorateBlock(main);
+  decorateBlock(block) {
+    decorateBlock(block);
   }
 
   /**

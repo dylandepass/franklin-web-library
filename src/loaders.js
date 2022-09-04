@@ -86,15 +86,33 @@ export async function loadBlock(block, eager = false) {
   if (!(block.getAttribute('data-block-status') === 'loading' || block.getAttribute('data-block-status') === 'loaded')) {
     block.setAttribute('data-block-status', 'loading');
     const blockName = block.getAttribute('data-block-name');
+
+    let cssPath = `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`;
+    let jsPath = `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`;
+
+    if (window.hlx.experiment && window.hlx.experiment.run) {
+      const { experiment } = window.hlx;
+      if (experiment.selectedVariant !== 'control') {
+        const { control } = experiment.variants;
+        if (control && control.blocks && control.blocks.includes(blockName)) {
+          const blockIndex = control.blocks.indexOf(blockName);
+          const variant = experiment.variants[experiment.selectedVariant];
+          const blockPath = variant.blocks[blockIndex];
+          cssPath = `${window.hlx.codeBasePath}/experiments/${experiment.id}/${blockPath}/${blockName}.css`;
+          jsPath = `${window.hlx.codeBasePath}/experiments/${experiment.id}/${blockPath}/${blockName}.js`;
+        }
+      }
+    }
+
     if (blockName) {
       try {
         const cssLoaded = new Promise((resolve) => {
-          loadCSS(`/blocks/${blockName}/${blockName}.css`, resolve);
+          loadCSS(cssPath, resolve);
         });
         const decorationComplete = new Promise((resolve) => {
           (async () => {
             try {
-              const mod = await import(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`);
+              const mod = await import(jsPath);
               if (mod.default) {
                 await mod.default(block, blockName, document, eager);
               }

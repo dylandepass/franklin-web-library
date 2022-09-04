@@ -18,6 +18,7 @@ export * from './loaders.js';
 export * from './metadata.js';
 export * from './rum.js';
 export * from './performance.js';
+export * from './experiments.js';
 
 /**
  * Initializes helix
