@@ -1,6 +1,6 @@
 {
   "name": "@dylandepass/helix-web-library",
-  "version": "1.12.4",
+  "version": "1.12.5",
   "description": "Helix Web Library",
   "main": "src/index.js",
   "type": "module",
