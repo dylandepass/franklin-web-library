@@ -21,7 +21,7 @@ export * from './performance.js';
 export * from './experiments.js';
 
 /**
- * Initializes helix
+ * Initializes franklin
  * @preserve Exclude from terser
  */
 export function initHlx() {

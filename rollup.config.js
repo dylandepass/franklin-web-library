@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Adobe. All rights reserved.
+ * Copyright 2022 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -28,11 +28,11 @@ const banner = `/*
 const bundles = [
   {
     source: 'src/index.js',
-    outputFile: 'dist/helix-web-library',
+    outputFile: 'dist/franklin-web-library',
   },
   {
     source: 'src/components/form/index.js',
-    outputFile: 'dist/helix-web-forms',
+    outputFile: 'dist/franklin-web-forms',
   },
   {
     source: 'cli/index.js',

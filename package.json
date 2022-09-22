@@ -1,7 +1,7 @@
 {
-  "name": "@dylandepass/helix-web-library",
+  "name": "@dylandepass/franklin-web-library",
   "version": "1.13.1",
-  "description": "Helix Web Library",
+  "description": "Franklin Web Library",
   "main": "src/index.js",
   "type": "module",
   "bin": "./bin/cli.js",
@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dylandepass/helix-web-library"
+    "url": "https://github.com/dylandepass/franklin-web-library"
   },
   "author": "",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/dylandepass/helix-web-library/issues"
+    "url": "https://github.com/dylandepass/franklin-web-library/issues"
   },
-  "homepage": "https://github.com/dylandepass/helix-web-library#readme",
+  "homepage": "https://github.com/dylandepass/franklin-web-library#readme",
   "mocha": {
     "require": "test/setup-env.js",
     "recursive": "true",

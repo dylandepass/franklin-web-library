@@ -12,10 +12,10 @@ module.exports = {
     }],
     ["@semantic-release/github", {
       "assets": [
-        { "path": "dist/helix-web-library.esm.js", "label": "Helix Web Library ESM" },
-        { "path": "dist/helix-web-library.esm.min.js", "label": "Helix Web Library ESM (Minified)" },
-        { "path": "dist/helix-web-forms.esm.js", "label": "Helix Web Forms ESM" },
-        { "path": "dist/helix-web-forms.esm.min.js", "label": "Helix Web Forms ESM (Minified)" },
+        { "path": "dist/franklin-web-library.esm.js", "label": "Franklin Web Library ESM" },
+        { "path": "dist/franklin-web-library.esm.min.js", "label": "Franklin Web Library ESM (Minified)" },
+        { "path": "dist/franklin-web-forms.esm.js", "label": "Franklin Web Forms ESM" },
+        { "path": "dist/franklin-web-forms.esm.min.js", "label": "Franklin Web Forms ESM (Minified)" },
       ]
     }]
   ],

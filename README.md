@@ -1,58 +1,58 @@
-# Helix Web Library
+# Franklin Web Library
 
-> Set of reusable classes and functions for rendering Helix pages
+> Set of reusable classes and functions for rendering Franklin pages
 
 ## Status
-[![codecov](https://img.shields.io/codecov/c/github/dylandepass/helix-web-library.svg)](https://codecov.io/gh/dylandepass/helix-web-library)
-[![CircleCI](https://img.shields.io/circleci/project/github/dylandepass/helix-web-library.svg)](https://circleci.com/gh/dylandepass/helix-web-library)
-[![GitHub license](https://img.shields.io/github/license/dylandepass/helix-web-library.svg)](https://github.com/dylandepass/helix-web-library/blob/master/LICENSE.txt)
-[![GitHub issues](https://img.shields.io/github/issues/dylandepass/helix-web-library.svg)](https://github.com/dylandepass/helix-web-library/issues)
-[![LGTM Code Quality Grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/dylandepass/helix-web-library.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/dylandepass/helix-web-library)
+[![codecov](https://img.shields.io/codecov/c/github/dylandepass/franklin-web-library.svg)](https://codecov.io/gh/dylandepass/franklin-web-library)
+[![CircleCI](https://img.shields.io/circleci/project/github/dylandepass/franklin-web-library.svg)](https://circleci.com/gh/dylandepass/franklin-web-library)
+[![GitHub license](https://img.shields.io/github/license/dylandepass/franklin-web-library.svg)](https://github.com/dylandepass/franklin-web-library/blob/master/LICENSE.txt)
+[![GitHub issues](https://img.shields.io/github/issues/dylandepass/franklin-web-library.svg)](https://github.com/dylandepass/franklin-web-library/issues)
+[![LGTM Code Quality Grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/dylandepass/franklin-web-library.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/dylandepass/franklin-web-library)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 ## Installation
 
-Can be added to a helix project either with by downloading the bundles directly from the releases page on github, using a cloud bundler like skypack or using npm (requires a build step).
+Can be added to a franklin project either with by downloading the bundles directly from the releases page on github, using a cloud bundler like skypack or using npm (requires a build step).
 
 ### NPM
 ```bash
-$ npm install @dylandepass/helix-web-library
+$ npm install @dylandepass/franklin-web-library
 ```
 
 After installing, the library bundle can be added to `scripts/` using the CLI:
 ```bash
-$ npx helix-web-library install
+$ npx franklin-web-library install
 ```
 
 > For more updating, removing, and options, see [CLI](#cli)
 
 
 ### Github Release
-Download the required bundles from the [releases page](https://github.com/dylandepass/helix-web-library/releases).
+Download the required bundles from the [releases page](https://github.com/dylandepass/franklin-web-library/releases).
 
 ### Skypack Release
-[Helix Web Framework ESM](https://cdn.skypack.dev/@dylandepass/helix-web-library@latest/dist/helix-web-library.esm.js)
+[Franklin Web Framework ESM](https://cdn.skypack.dev/@dylandepass/franklin-web-library@latest/dist/franklin-web-library.esm.js)
 
-[Helix Web Framework ESM (Minified)](https://cdn.skypack.dev/@dylandepass/helix-web-library@latest/dist/helix-web-library.esm.min.js)
+[Franklin Web Framework ESM (Minified)](https://cdn.skypack.dev/@dylandepass/franklin-web-library@latest/dist/franklin-web-library.esm.min.js)
 
-[Helix Web Forms ESM](https://cdn.skypack.dev/@dylandepass/helix-web-library@latest/dist/helix-web-forms.esm.js)
+[Franklin Web Forms ESM](https://cdn.skypack.dev/@dylandepass/franklin-web-library@latest/dist/franklin-web-forms.esm.js)
 
-[Helix Web Forms ESM (Minified)](https://cdn.skypack.dev/@dylandepass/helix-web-library@latest/dist/helix-web-forms.esm.min.js)
+[Franklin Web Forms ESM (Minified)](https://cdn.skypack.dev/@dylandepass/franklin-web-library@latest/dist/franklin-web-forms.esm.min.js)
 
 ## What's included?
 
-The two scripts included are `helix-web-framework` and `helix-web-forms`.
+The two scripts included are `franklin-web-framework` and `franklin-web-forms`.
 
-### helix-web-framework
-Includes a helper class that abstracts the decoration and loading of a helix page. This class provides various hooks and overrides for customizating the helix decoration and loading process.
+### franklin-web-framework
+Includes a helper class that abstracts the decoration and loading of a franklin page. This class provides various hooks and overrides for customizating the franklin decoration and loading process.
 
 #### Usage
 
 ```js
 
-import { HelixApp } from 'https://cdn.skypack.dev/@dylandepass/helix-web-library@latest/dist/helix-web-library.esm.min.js';
+import { Franklin } from 'https://cdn.skypack.dev/@dylandepass/franklin-web-library@latest/dist/franklin-web-library.esm.min.js';
 
-HelixApp.init({
+Franklin.init({
   rumEnabled: true,
   rumGeneration: 'project-1',
   productionDomains: ['acme.com'],
@@ -114,9 +114,9 @@ If you need to customize the page decoration the following overrides are availab
 For example, if you want a different decoration for your buttons you can use `withDecorateButtons` to override the default behaviour.
 
 ```js
-import { HelixApp } from 'https://cdn.skypack.dev/@dylandepass/helix-web-library@latest/dist/helix-web-library.esm.min.js';
+import { Franklin } from 'https://cdn.skypack.dev/@dylandepass/franklin-web-library@latest/dist/franklin-web-library.esm.min.js';
 
-HelixApp.init({
+Franklin.init({
   ...
 })
   ...
@@ -129,14 +129,14 @@ HelixApp.init({
 
 See the [API documentation](docs/API.md).
 
-### helix-web-forms
+### franklin-web-forms
 
 > This is a pre-alpha and and mainly just an experiment.. Not meant for production use
 
-Creates an HTML form based on a form definiton defined in a sheet. The form definition should be contained in the `helix-default` sheet. No assumptions are made on the styling of the form as is left up to the developer to style the form markup.
+Creates an HTML form based on a form definiton defined in a sheet. The form definition should be contained in the `franklin-default` sheet. No assumptions are made on the styling of the form as is left up to the developer to style the form markup.
 
 ```js
-import { createForm } from 'helix-web-framework.esm.min.js';
+import { createForm } from 'franklin-web-framework.esm.min.js';
 
 export default async function decorate(block) {
   const form = block.querySelector('a[href$=".json"]');
@@ -166,17 +166,17 @@ export default async function decorate(block) {
 
 Update/reinstall (overwrites existing file):
 ```bash
-$ npx helix-web-library install --force
+$ npx franklin-web-library install --force
 ```
 
 Remove without installing:
 ```bash
-$ npx helix-web-library uninstall
+$ npx franklin-web-library uninstall
 ```
 
 Install to a different path (must be inside current working directory):
 ```bash
-$ npx helix-web-library install --dir=./libs
+$ npx franklin-web-library install --dir=./libs
 ```
 
 ### Install Options

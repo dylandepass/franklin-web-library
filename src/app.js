@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Adobe. All rights reserved.
+ * Copyright 2022 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -58,7 +58,7 @@ const defaultConfig = {
  * @property {boolean} experimentsEnabled
  */
 
-export default class HelixApp {
+export default class Franklin {
   /** @param {AppConfig} config */
   constructor(config = defaultConfig) {
     this.config = config;
@@ -81,7 +81,7 @@ export default class HelixApp {
   }
 
   static init(config) {
-    return new HelixApp(config);
+    return new Franklin(config);
   }
 
   /**

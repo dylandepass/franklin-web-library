@@ -63,10 +63,10 @@ function fileHash(filePath, algo = 'sha1') {
  * Install library, optionally overwriting/removing existing file at path.
  *
  * @example
- * npx helix-web-library install [--dir=./some/path] [--force] [--minify]
+ * npx franklin-web-library install [--dir=./some/path] [--force] [--minify]
  *
  * @example
- * npx helix-web-library uninstall
+ * npx franklin-web-library uninstall
  */
 export const install = async ({
   dir = './scripts',
@@ -75,11 +75,11 @@ export const install = async ({
   remove = false,
 } = {}) => {
   const installDir = await getInstallDir(dir);
-  const libFileName = `helix-web-library.esm${minify ? '.min' : ''}.js`;
+  const libFileName = `franklin-web-library.esm${minify ? '.min' : ''}.js`;
   const installPath = path.resolve(installDir, `./${libFileName}`);
   const libPath = fileURLToPath(new URL(`../dist/${libFileName}`, import.meta.url));
 
-  console.info(`Installing Helix Web Library ${minify ? '(minified) ' : ''}to path: ${installPath}`);
+  console.info(`Installing Franklin Web Library ${minify ? '(minified) ' : ''}to path: ${installPath}`);
 
   let exists = false;
   let existingHash;
