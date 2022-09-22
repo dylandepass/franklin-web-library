@@ -17,7 +17,8 @@ import { toClassName, toCamelCase } from './decorators.js';
 import { sampleRUM } from './rum.js';
 
 export function checkTesting() {
-  return (getMetadata('testing').toLowerCase() === 'on');
+  const tesing = getMetadata('testing');
+  return (tesing && tesing.toLowerCase() === 'on');
 }
 
 /**
@@ -97,7 +98,7 @@ function setLastExperimentVariant(experimentId, variant) {
 }
 
 /**
- * Gets the experiment name, if any for the page based on env, useragent, queyr params
+ * Gets the experiment name, if any for the page based on env, useragent, query params
  * @returns {string} experimentid
  */
 export function getExperiment() {

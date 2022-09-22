@@ -28,6 +28,7 @@ import {
   decorateIcons,
   decorateTemplateAndTheme,
   removeStylingFromImages,
+  decorateTesting,
 } from './core.js';
 
 const defaultConfig = {
@@ -37,6 +38,7 @@ const defaultConfig = {
   enableBlockLoader: true,
   loadHeader: true,
   loadFooter: true,
+  experimentsEnabled: false,
 };
 
 /**
@@ -53,6 +55,7 @@ const defaultConfig = {
  * @property {boolean} enableBlockLoader
  * @property {boolean} loadHeader
  * @property {boolean} loadFooter
+ * @property {boolean} experimentsEnabled
  */
 
 export default class HelixApp {
@@ -262,6 +265,10 @@ export default class HelixApp {
 
     if (this.config.lazyStyles ?? defaultConfig.lazyStyles) {
       loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
+    }
+
+    if (this.config.experimentsEnabled ?? defaultConfig.experimentsEnabled) {
+      if (!window.hlx.lighthouse) decorateTesting();
     }
 
     addFavIcon(`${window.hlx.codeBasePath}${this.config.favIcon ?? defaultConfig.favIcon}`);
