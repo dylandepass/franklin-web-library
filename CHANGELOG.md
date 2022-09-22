@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/dylandepass/helix-web-library/compare/v1.13.0...v1.13.1) (2022-09-22)
+
+
+### Bug Fixes
+
+* add experiments to config options ([a1df805](https://github.com/dylandepass/helix-web-library/commit/a1df80575a96c423894eb8842cc548f931ec80c9))
+
 # [1.13.0](https://github.com/dylandepass/helix-web-library/compare/v1.12.5...v1.13.0) (2022-09-04)
 
 
