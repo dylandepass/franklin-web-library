@@ -349,6 +349,10 @@ export default class Franklin {
    * @preserve Exclude from terser
    */
   waitForLCP(lcpBlocks) {
-    return waitForLCP(lcpBlocks, this.config.autoAppear ?? defaultConfig.autoAppear);
+    return waitForLCP(
+      lcpBlocks,
+      this.config.autoAppear ?? defaultConfig.autoAppear,
+      this.config.enableBlockLoader ?? defaultConfig.enableBlockLoader,
+    );
   }
 }

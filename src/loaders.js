@@ -208,12 +208,14 @@ export async function loadFooter(footer) {
  * load LCP block and/or wait for LCP in default content.
  * @preserve Exclude from terser
  */
-export async function waitForLCP(LCP_BLOCKS, autoAppear) {
+export async function waitForLCP(LCP_BLOCKS, autoAppear, loadLCPBlocks) {
   // eslint-disable-next-line no-use-before-define
   const lcpBlocks = LCP_BLOCKS;
   const block = document.querySelector('.block');
   const hasLCPBlock = (block && lcpBlocks.includes(block.getAttribute('data-block-name')));
-  if (hasLCPBlock) await loadBlock(block, true);
+  if (hasLCPBlock && loadLCPBlocks) {
+    await loadBlock(block, true);
+  }
 
   if (autoAppear) {
     document.querySelector('body').classList.add('appear');
