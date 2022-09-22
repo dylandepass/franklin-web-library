@@ -1,3 +1,10 @@
+## [1.13.2](https://github.com/dylandepass/franklin-web-library/compare/v1.13.1...v1.13.2) (2022-09-22)
+
+
+### Bug Fixes
+
+* rename to franklin ([4b44593](https://github.com/dylandepass/franklin-web-library/commit/4b44593ca8eb146b6cfcb26fd67cf76efae41f35))
+
 ## [1.13.1](https://github.com/dylandepass/helix-web-library/compare/v1.13.0...v1.13.1) (2022-09-22)
 
 
