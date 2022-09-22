@@ -1,3 +1,10 @@
+## [1.13.3](https://github.com/dylandepass/franklin-web-library/compare/v1.13.2...v1.13.3) (2022-09-22)
+
+
+### Bug Fixes
+
+* don't load LCP blocks if enableBlockLoader is false ([fa29922](https://github.com/dylandepass/franklin-web-library/commit/fa2992293a6b3129bbe435b2190bc05b95165baa))
+
 ## [1.13.2](https://github.com/dylandepass/franklin-web-library/compare/v1.13.1...v1.13.2) (2022-09-22)
 
 

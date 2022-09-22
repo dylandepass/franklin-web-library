@@ -1,6 +1,6 @@
 {
   "name": "@dylandepass/franklin-web-library",
-  "version": "1.13.2",
+  "version": "1.13.3",
   "description": "Franklin Web Library",
   "main": "src/index.js",
   "type": "module",
