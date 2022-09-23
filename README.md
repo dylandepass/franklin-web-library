@@ -12,7 +12,7 @@
 
 ## Installation
 
-Can be added to a franklin project either with by downloading the bundles directly from the releases page on github, using a cloud bundler like skypack or using npm (requires a build step).
+Can be added to a franklin project either with by downloading the bundles directly from the releases page on github, using a cloud bundler like skypack or using npm (installed into scripts with npx).
 
 ### NPM
 ```bash
